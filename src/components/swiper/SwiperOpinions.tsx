@@ -6,8 +6,10 @@ import { Swiper as SwiperClass } from "swiper/types";
 import { opinions } from "@/lib/data";
 import SwiperArrows from "./SwiperArrows";
 import OpinionCard from "../UI/OpinionCard";
+import { SwiperProps } from "@/lib/type";
+import { twMerge } from "tailwind-merge";
 
-export default function SwiperCards() {
+export default function SwiperCards({ className }: SwiperProps) {
   const [swiperRef, setSwiperRef] = useState<SwiperClass>();
   const [swiperLeftArrowsState, setSwiperLeftArrowsState] =
     useState<boolean>(true);
@@ -37,7 +39,7 @@ export default function SwiperCards() {
         spaceBetween={50}
         slidesPerView={3.3}
         onSlideChange={checkSwiperPos}
-        className="mb-8">
+        className={`${twMerge("mb-8", className)}`}>
         {opinions.map((item, index) => (
           <SwiperSlide key={index}>
             <OpinionCard

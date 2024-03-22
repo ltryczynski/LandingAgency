@@ -1,7 +1,7 @@
 import { TeamCardProps } from "@/lib/type";
 import React from "react";
 import Image from "next/image";
-import { H3 } from "./Heading";
+import { H3 } from "./Headings";
 
 export default function TeamCard({
   name,
@@ -10,7 +10,7 @@ export default function TeamCard({
   image,
 }: TeamCardProps) {
   return (
-    <article className="">
+    <article>
       <Image
         src={image}
         width={400}

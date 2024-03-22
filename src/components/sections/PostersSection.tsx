@@ -1,32 +1,18 @@
-import React, { Fragment } from "react";
-import Image from "next/image";
+"use client";
+import React, { useRef } from "react";
 import SectionInner from "../UI/SectionInner";
-import { H2 } from "../UI/Heading";
 import { posterData } from "@/lib/data";
 import ProjectCard from "../UI/ProjectCard";
+import { usePosterGSAP } from "../hooks/useGsapHooks";
 
 export default function PostersSection() {
+  const posterRef = useRef<HTMLElement | null>(null);
+  usePosterGSAP({ ref: posterRef });
   return (
-    <section className="mb-32">
-      <SectionInner className="bg-[url(/quoteBg.svg)] bg-cover bg-center bg-no-repeat w-full py-32 -mt-16">
-        <div className="max-w-small flex flex-col justify-center items-center gap-8 mx-auto">
-          <H2 className="mask text-center pb-8 border-b">
-            We believe that the quality of the product is the most important
-            thing for the customer
-          </H2>
-          <Image
-            src="/ceo.webp"
-            width={200}
-            height={70}
-            alt="CEO"
-            className="rounded-full"
-          />
-          <p className="text-md -mt-4">Henry, Art Director</p>
-        </div>
-      </SectionInner>
+    <section className="mb-32" ref={posterRef}>
       <SectionInner className="columns-2  gap-32">
         {posterData.map((item) => (
-          <div className="mt-32" key={item.title}>
+          <div className="mt-32 poster" key={item.title} style={{ opacity: 0 }}>
             <ProjectCard
               title={item.title}
               likeCount={item.likeCount}

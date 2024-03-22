@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { CiHeart } from "react-icons/ci";
-import { H3 } from "./Heading";
+import { H3 } from "./Headings";
 import { ProjectCardProps } from "@/lib/type";
 
 export default function ProjectCard({

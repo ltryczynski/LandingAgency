@@ -1,5 +1,5 @@
 import React from "react";
-import { H3 } from "./Heading";
+import { H3 } from "./Headings";
 import { AwardsProps } from "@/lib/type";
 
 export default function AwardCard({ name, event, year }: AwardsProps) {

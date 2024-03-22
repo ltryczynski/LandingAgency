@@ -16,7 +16,7 @@ export default function AboutUsSlider() {
         <SwiperSlide key={item} className="pt-16 pb-20 px-8 text-lg">
           <div className="w-full h-full flex flex-col justify-start items-start gap-4">
             <p className="mb-8"> Check out how we operate</p>0{index + 1}
-            <p className="text-3xl">{item}</p>
+            <p className="text-3xl leading-tight">{item}</p>
           </div>
         </SwiperSlide>
       ))}
