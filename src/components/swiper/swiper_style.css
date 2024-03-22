@@ -1,0 +1,15 @@
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal {
+  display: flex;
+  padding-left: 2rem;
+}
+.swiper-pagination-bullet {
+  width: 1em;
+  height: 1em;
+}
+
+.swiper-button-prev:after,
+.swiper-rtl .swiper-button-next:after,
+.swiper-button-next:after,
+.swiper-rtl .swiper-button-prev:after {
+  content: "";
+}
