@@ -22,7 +22,7 @@ export function useHomepageGSAP({ ref }: RefProps) {
       heroTl.fromTo(".heroButton", { opacity: 0 }, { opacity: 1 }, "-=50%");
       heroTl.fromTo(
         ".heroVideo",
-        { opacity: 0, y: 100 },
+        { opacity: 0, y: 50 },
         { opacity: 1, y: 0 },
         "-=90%"
       );
@@ -38,7 +38,7 @@ export function useHomepageGSAP({ ref }: RefProps) {
       });
       clientsTl.fromTo(
         ".clientCard",
-        { opacity: 0, y: 100 },
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
@@ -193,7 +193,7 @@ export function useTeamGSAP({ ref }: RefProps) {
       );
       teamTl.fromTo(
         ".teamCard",
-        { opacity: 0, y: 100 },
+        { opacity: 0, y: 50 },
         { opacity: 1, y: 0, stagger: 0.1, ease: "elastic.out(1,0.75)" }
       );
     },
@@ -218,7 +218,7 @@ export function useAwardGSAP({ ref }: RefProps) {
       awardTl.fromTo("h2", { opacity: 0, y: 50 }, { opacity: 1, y: 0 });
       awardTl.fromTo(
         ".awardCard",
-        { opacity: 0, y: 100 },
+        { opacity: 0, y: 50 },
         { opacity: 1, y: 0, stagger: 0.1, ease: "elastic.out(1,0.75)" }
       );
     },
@@ -243,7 +243,7 @@ export function useOpinionsGSAP({ ref }: RefProps) {
       opinionsTl.fromTo("h2", { opacity: 0, y: 50 }, { opacity: 1, y: 0 });
       opinionsTl.fromTo(
         ".opinionsSwiper article",
-        { opacity: 0, y: 100 },
+        { opacity: 0, y: 50 },
         { opacity: 1, y: 0, stagger: 0.1, ease: "elastic.out(1,0.5)" }
       );
     },
