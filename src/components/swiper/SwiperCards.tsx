@@ -18,7 +18,7 @@ export default function SwiperCards({ className }: SwiperProps) {
     useState<boolean>(false);
 
   const slidePerView = (): number => {
-    let windowWidth = window.innerWidth;
+    let windowWidth = window.innerWidth || 1;
     if (windowWidth > 1700) return 3.3;
     else if (windowWidth > 1300 && windowWidth < 1700) return 2.3;
     else return 1;
