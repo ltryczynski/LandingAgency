@@ -4,7 +4,7 @@ export function H2({ className, children, style }: HeadingProps) {
   return (
     <h2
       className={`${twMerge(
-        "text-2xl text-center md:text-left md:text-5xl font-medium leading-none before:bg-[url(/icon.svg)] before:w-6 before:h-6 before:mb-4 before:block before:bg-cover before:mx-auto md:before:mx-0",
+        "text-2xl md:text-5xl font-medium leading-none before:bg-[url(/icon.svg)] before:w-6 before:h-6 before:mb-4 before:block before:bg-cover before:mx-auto md:before:mx-0",
         className
       )}`}
       style={style}>

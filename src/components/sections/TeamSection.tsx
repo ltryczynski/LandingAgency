@@ -15,7 +15,9 @@ export default function TeamSection() {
       className="flex flex-col gap-16 border-b mb-16 pb-16"
       ref={teamRef}>
       <SectionInner className="flex flex-wrap items-end">
-        <H2 className="w-full md:w-1/2 before:hidden" style={{ opacity: 0 }}>
+        <H2
+          className="w-full md:w-1/2 before:hidden  text-center md:text-left"
+          style={{ opacity: 0 }}>
           <span className="text-purple">We believe that the right</span> design
           will bring your business to life
         </H2>

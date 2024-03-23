@@ -1,9 +1,10 @@
+import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { RefProps } from "@/lib/type";
+import { RefArrProps, RefProps } from "@/lib/type";
 gsap.registerPlugin(ScrollTrigger);
-
+gsap.registerPlugin(useGSAP);
 export function useHomepageGSAP({ ref }: RefProps) {
   useGSAP(
     () => {
@@ -141,33 +142,19 @@ export function useQuoteGSAP({ ref }: RefProps) {
   );
 }
 
-export function usePosterGSAP({ ref }: RefProps) {
+export function usePosterGSAP({ itemRef, sectionRef }: RefArrProps) {
   useGSAP(
     () => {
-      if (!ref.current) return;
-      if (!ref.current.querySelector(".poster")) return;
-
-      ref.current.querySelectorAll(".poster").forEach((item) => {
-        gsap.fromTo(
-          item,
-          {
-            opacity: 0,
-            y: 50,
-          },
-          {
-            scrollTrigger: {
-              trigger: item,
-              start: "top center",
-              once: true,
-            },
-            opacity: 1,
-            y: 0,
-            duration: 0.3,
-          }
-        );
+      console.log(itemRef);
+      if (!itemRef.current) return;
+      [...itemRef.current].forEach((item) => {
+        let tl = gsap.timeline({
+          scrollTrigger: { trigger: item, once: true, start: "top 40%" },
+        });
+        tl.fromTo(item, { opacity: 0, y: 50 }, { opacity: 1, y: 0 });
       });
     },
-    { scope: ref }
+    { scope: sectionRef }
   );
 }
 

@@ -55,3 +55,8 @@ export type RefProps = {
 export type SwiperProps = {
     className?: string
 }
+
+export type RefArrProps = {
+    itemRef: React.MutableRefObject<(HTMLDivElement | null)[]>;
+    sectionRef: React.MutableRefObject<HTMLElement | null>;
+}

@@ -6,13 +6,18 @@ import ProjectCard from "../UI/ProjectCard";
 import { usePosterGSAP } from "../../hooks/useGsapHooks";
 
 export default function PostersSection() {
-  const posterRef = useRef<HTMLElement | null>(null);
-  usePosterGSAP({ ref: posterRef });
+  const posterRef = useRef<(HTMLDivElement | null)[]>([]);
+  const postersSectionRef = useRef<HTMLDivElement | null>(null);
+  usePosterGSAP({ itemRef: posterRef, sectionRef: postersSectionRef });
   return (
-    <section className="mb-32" ref={posterRef}>
+    <section className="mb-32" ref={postersSectionRef}>
       <SectionInner className="md:columns-2  gap-32">
-        {posterData.map((item) => (
-          <div className="mt-32 poster" key={item.title} style={{ opacity: 0 }}>
+        {posterData.map((item, index) => (
+          <div
+            className="mt-32 poster"
+            ref={(el) => posterRef.current.push(el)}
+            key={item.title}
+            style={{ opacity: 0 }}>
             <ProjectCard
               title={item.title}
               likeCount={item.likeCount}

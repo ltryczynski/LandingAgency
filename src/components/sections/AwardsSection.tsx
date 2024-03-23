@@ -12,7 +12,11 @@ export default function AwardsSection() {
   return (
     <section className="pb-16" ref={awardRef}>
       <SectionInner className="flex flex-col gap-8 mb-8">
-        <H2 style={{ opacity: 0 }}>Awards</H2>
+        <H2
+          className="text-center md:text-left before:hidden"
+          style={{ opacity: 0 }}>
+          Awards
+        </H2>
       </SectionInner>
       <SectionInner className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {awards.map((item) => (
