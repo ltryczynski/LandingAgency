@@ -17,13 +17,6 @@ export default function SwiperCards({ className }: SwiperProps) {
   const [swiperRightArrowsState, setSwiperRightArrowsState] =
     useState<boolean>(false);
 
-  const slidePerView = (): number => {
-    let windowWidth = window.innerWidth || 1;
-    if (windowWidth > 1700) return 3.3;
-    else if (windowWidth > 1300 && windowWidth < 1700) return 2.3;
-    else return 1;
-  };
-
   const checkSwiperPos = useCallback((swiper: SwiperClass) => {
     swiper.isBeginning && setSwiperLeftArrowsState(true);
     !swiper.isBeginning && setSwiperLeftArrowsState(false);
@@ -42,7 +35,15 @@ export default function SwiperCards({ className }: SwiperProps) {
       <Swiper
         onSwiper={setSwiperRef}
         spaceBetween={50}
-        slidesPerView={slidePerView()}
+        slidesPerView={1}
+        breakpoints={{
+          800: {
+            slidesPerView: 2.1,
+          },
+          1700: {
+            slidesPerView: 3.2,
+          },
+        }}
         onSlideChange={checkSwiperPos}
         className={`${twMerge("mb-8", className)}`}>
         {cardContent.map((item, index) => (
