@@ -5,7 +5,7 @@ import { H2 } from "../UI/Headings";
 import { teamMembers } from "@/lib/data";
 import TeamCard from "../UI/TeamCard";
 import { TfiAngleLeft } from "react-icons/tfi";
-import { useTeamGSAP } from "../hooks/useGsapHooks";
+import { useTeamGSAP } from "../../hooks/useGsapHooks";
 
 export default function TeamSection() {
   const teamRef = useRef<HTMLElement>(null);
@@ -14,20 +14,20 @@ export default function TeamSection() {
     <section
       className="flex flex-col gap-16 border-b mb-16 pb-16"
       ref={teamRef}>
-      <SectionInner className="flex items-end">
-        <H2 className="w-1/2 before:hidden" style={{ opacity: 0 }}>
+      <SectionInner className="flex flex-wrap items-end">
+        <H2 className="w-full md:w-1/2 before:hidden" style={{ opacity: 0 }}>
           <span className="text-purple">We believe that the right</span> design
           will bring your business to life
         </H2>
         <div className="flex w-1/2 justify-end">
           <div
-            className="bg-purple p-4 rounded-full arrow"
+            className="bg-purple p-4 rounded-full arrow hidden md:block"
             style={{ opacity: 0 }}>
-            <TfiAngleLeft className="text-3xl -rotate-45 text-white " />
+            <TfiAngleLeft className="text-3xl -rotate-45 text-white" />
           </div>
         </div>
       </SectionInner>
-      <SectionInner className="grid grid-cols-3 gap-8 justify-center items-start">
+      <SectionInner className="grid grid-cols-1 md:grid-cols-3 gap-32 md:gap-8justify-center items-start">
         {teamMembers.map((item, index) => (
           <div
             key={item.name + index}

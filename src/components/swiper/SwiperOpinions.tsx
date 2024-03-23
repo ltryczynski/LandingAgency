@@ -16,6 +16,13 @@ export default function SwiperCards({ className }: SwiperProps) {
   const [swiperRightArrowsState, setSwiperRightArrowsState] =
     useState<boolean>(false);
 
+  const slidePerView = (): number => {
+    let windowWidth = window.innerWidth;
+    if (windowWidth > 1700) return 3.3;
+    else if (windowWidth > 1300 && windowWidth < 1700) return 2.3;
+    else return 1;
+  };
+
   const checkSwiperPos = useCallback((swiper: SwiperClass) => {
     swiper.isBeginning && setSwiperLeftArrowsState(true);
     !swiper.isBeginning && setSwiperLeftArrowsState(false);
@@ -37,7 +44,7 @@ export default function SwiperCards({ className }: SwiperProps) {
           checkSwiperPos(swiper);
         }}
         spaceBetween={50}
-        slidesPerView={3.3}
+        slidesPerView={slidePerView()}
         onSlideChange={checkSwiperPos}
         className={`${twMerge("mb-8", className)}`}>
         {opinions.map((item, index) => (
@@ -50,7 +57,7 @@ export default function SwiperCards({ className }: SwiperProps) {
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="flex gap-4">
+      <div className="flex gap-4 justify-center md:justify-start">
         <SwiperArrows
           onClick={handlePrevious}
           type="prev"

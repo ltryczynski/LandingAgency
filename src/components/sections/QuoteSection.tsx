@@ -3,7 +3,7 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import SectionInner from "../UI/SectionInner";
 import { H2 } from "../UI/Headings";
-import { useQuoteGSAP } from "../hooks/useGsapHooks";
+import { useQuoteGSAP } from "../../hooks/useGsapHooks";
 
 export default function QuoteSection() {
   const quoteRef = useRef<HTMLElement | null>(null);

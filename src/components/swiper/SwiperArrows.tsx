@@ -13,9 +13,9 @@ export default function SwiperArrows({
 }: SwiperArrowsProps) {
   const arrowSrc = useMemo(() => {
     return type === "prev" ? (
-      <LiaAngleLeftSolid className="text-5xl" />
+      <LiaAngleLeftSolid className="text-2xl md:text-5xl" />
     ) : (
-      <LiaAngleRightSolid className="text-5xl" />
+      <LiaAngleRightSolid className="text-2xl md:text-5xl" />
     );
   }, [type]);
   return (
@@ -25,7 +25,7 @@ export default function SwiperArrows({
         "border rounded-full px-8 transition",
         className
       )}`}>
-      <div className={`${twMerge("px-4 py-2", ArrowClassName)}`}>
+      <div className={`${twMerge("px-2 md:px-4 py-2", ArrowClassName)}`}>
         {arrowSrc}
       </div>
     </button>

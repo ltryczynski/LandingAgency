@@ -7,22 +7,22 @@ import AboutUsSlider from "../swiper/AboutUsSwiper";
 import SwiperCards from "../swiper/SwiperCards";
 
 import { H2 } from "../UI/Headings";
-import { useAboutUsGSAP } from "../hooks/useGsapHooks";
+import { useAboutUsGSAP } from "../../hooks/useGsapHooks";
 
 export default function AboutSection() {
   const aboutUsRef = useRef<HTMLElement | null>(null);
   useAboutUsGSAP({ ref: aboutUsRef });
   return (
     <section className="py-16 flex flex-col gap-32" ref={aboutUsRef}>
-      <SectionInner className="grid grid-cols-3 gap-16 aboutUsFirst">
-        <div className="col-span-2 flex flex-col items-start gap-8">
+      <SectionInner className="grid grid-cols-1 md:grid-cols-3 gap-16 aboutUsFirst">
+        <div className="flex flex-col items-center md:col-span-2 md:flex-row md:items-start gap-8">
           <H2 style={{ opacity: 0 }} className="first">
             Our main goal is to set your business on the hills
           </H2>
           <Image
             src="/about-us.webp"
-            width="400"
-            height="150"
+            width={400}
+            height={150}
             alt="About us image"
             className="aboutUsImage"
             style={{ opacity: 0 }}
@@ -38,7 +38,7 @@ export default function AboutSection() {
         </div>
       </SectionInner>
       <SectionInner className="aboutUsSecond">
-        <H2 className="w-1/2 mb-16 second">
+        <H2 className="md:w-1/2 mb-16 second">
           We believe the right design will bring your business to life
         </H2>
 

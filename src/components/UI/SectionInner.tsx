@@ -4,6 +4,8 @@ import React from "react";
 
 export default function Section({ children, className }: SectionProps) {
   return (
-    <div className={twMerge(`max-w-big mx-auto`, className)}>{children}</div>
+    <div className={twMerge(`w-full md:max-w-big mx-auto px-4`, className)}>
+      {children}
+    </div>
   );
 }

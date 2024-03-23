@@ -18,12 +18,12 @@ export default function TeamCard({
         alt={`${name} - ${position} Image`}
         className="w-full rounded-full mb-8"
       />
-      <div className="flex flex-col items-start gap-4">
+      <div className="flex flex-col items-center md:items-start gap-4">
         <H3>{name}</H3>
         <div className="rounded-full text-white bg-indigoC w-max px-4 py-2 text-lg">
           {position}
         </div>
-        <p className="text-xl">{desc}</p>
+        <p className="text-xl text-center md:text-left">{desc}</p>
       </div>
     </article>
   );

@@ -9,11 +9,11 @@ export default function ContentSection() {
     <section className="py-16">
       <SectionInner className="max-w-small text-center flex flex-col gap-16">
         <H2 className="mask before:hidden">{`Let's Talk About the Next big thing`}</H2>
-        <div className="flex justify-center gap-8 border-b pb-16">
+        <div className="flex justify-center flex-wrap gap-8 border-b pb-16">
           <ButtonAlt>noreply@test.com</ButtonAlt>
           <ButtonAlt>+48 123 456 789</ButtonAlt>
         </div>
-        <div className="flex justify-center flex-wrap gap-8 pb-16 border-b">
+        <div className="flex justify-center flex-wrap gap-4 md:gap-8  pb-16 border-b">
           {socialTags.map((item) => (
             <article
               key={item.name}
