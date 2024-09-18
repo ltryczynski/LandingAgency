@@ -3,12 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { H3 } from "./Headings";
 
-export default function TeamCard({
-  name,
-  position,
-  desc,
-  image,
-}: TeamCardProps) {
+export default function TeamCard({ name, position, desc, image }: TeamCardProps) {
   return (
     <article>
       <Image
@@ -20,9 +15,7 @@ export default function TeamCard({
       />
       <div className="flex flex-col items-center md:items-start gap-4">
         <H3>{name}</H3>
-        <div className="rounded-full text-white bg-indigoC w-max px-4 py-2 text-lg">
-          {position}
-        </div>
+        <div className="rounded-full text-white bg-indigoC w-max px-4 py-2 text-lg">{position}</div>
         <p className="text-xl text-center md:text-left">{desc}</p>
       </div>
     </article>

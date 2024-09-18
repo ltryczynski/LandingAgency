@@ -15,14 +15,12 @@ export default function PostersSection() {
         {posterData.map((item, index) => (
           <div
             className="mt-32 poster"
-            ref={(el) => posterRef.current.push(el)}
+            ref={(el) => {
+              if (el) posterRef.current[index] = el;
+            }}
             key={item.title}
             style={{ opacity: 0 }}>
-            <ProjectCard
-              title={item.title}
-              likeCount={item.likeCount}
-              image={item.image}
-            />
+            <ProjectCard title={item.title} likeCount={item.likeCount} image={item.image} />
           </div>
         ))}
       </SectionInner>
